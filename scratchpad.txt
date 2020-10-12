@@ -1,0 +1,6 @@
+Manual compilation:
+arm-none-eabi-gcc -MMD -DXMC1100_Q024x0064 -I ~/libs/XMC_Peripheral_Library_v2.1.24/XMCLib/inc -I ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Include -I ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Infineon/XMC1100_series/Include -ffunction-sections -fdata-sections -O2 -Wall -Wa,-adhlns="./build/main.o.lst" -std=gnu99 -pipe -c -mcpu=cortex-m0 -mthumb -g -gdwarf-2 -o ./build/main.o ./src/main.c
+(keep attention about spaces after -I option)
+
+arm-none-eabi-gcc  -x assembler-with-cpp -DXMC1100_Q024x0064 -Wall -Wa,-adhlns="./build/Startup/startup_XMC1100.o.lst" -c -mcpu=cortex-m0 -mthumb -g -gdwarf-2 -o build/Startup/startup_XMC1100.o ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Infineon/XMC1100_series/Source/GCC/startup_XMC1100.S
+
