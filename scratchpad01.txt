@@ -1,0 +1,65 @@
+
+"C:/Users/karol/bin/DAVE-IDE-4.4.2-64Bit/eclipse/ARM-GCC-49/bin/arm-none-eabi-gcc" 
+-MMD 
+-MT "Startup/system_XMC1100.o" 
+-DXMC1100_Q024x0064 
+-I"C:/Workspaces/DAVE-4.4.2-64Bit/SampleLEDApplication/Libraries/XMCLib/inc" 
+-I"C:/Workspaces/DAVE-4.4.2-64Bit/SampleLEDApplication/Libraries/CMSIS/Include" 
+-I"C:/Workspaces/DAVE-4.4.2-64Bit/SampleLEDApplication/Libraries/CMSIS/Infineon/XMC1100_series/Include" 
+-I"C:/Workspaces/DAVE-4.4.2-64Bit/SampleLEDApplication" 
+-I"C:/Workspaces/DAVE-4.4.2-64Bit/SampleLEDApplication/Dave/Generated" 
+-I"C:/Workspaces/DAVE-4.4.2-64Bit/SampleLEDApplication/Libraries" 
+-O0 
+-ffunction-sections 
+-fdata-sections 
+-Wall 
+-std=gnu99 
+-Wa,-adhlns="Startup/system_XMC1100.o.lst" 
+-pipe 
+-c 
+-fmessage-length=0 
+-MMD -MP -MF"Startup/system_XMC1100.d" 
+-MT"Startup/system_XMC1100.d Startup/system_XMC1100.o" 
+-mcpu=cortex-m0 
+-mthumb 
+-g 
+-gdwarf-2 
+-o "Startup/system_XMC1100.o" 
+"../Startup/system_XMC1100.c" 
+
+
+Opcje:
+
+-DXMC1100_Q024x0064 
+-I ~/libs/XMC_Peripheral_Library_v2.1.24/XMCLib/inc
+-I ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Include
+-I ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Infineon/XMC1100_series/Include
+-O0
+-Wall
+-std=gnu99
+-Wa,-adhlns="Startup/system_XMC1100.o.lst" 
+-pipe 
+-c 
+-fmessage-length=0
+-mcpu=cortex-m0 
+-mthumb 
+-g 
+-gdwarf-2 
+-o "<nazwa_pliku_obiektowego>"
+<plik_źródłowy_C>
+
+'Building target: SampleLEDApplication.elf'
+'Invoking: ARM-GCC C Linker'
+"C:/Users/karol/bin/DAVE-IDE-4.4.2-64Bit/eclipse/ARM-GCC-49/bin/arm-none-eabi-gcc" 
+-T"../linker_script.ld" 
+-nostartfiles 
+-Xlinker --gc-sections -specs=nano.specs -specs=nosys.specs 
+-Wl,-Map,"SampleLEDApplication.map" 
+-mcpu=cortex-m0 
+-mthumb 
+-g 
+-gdwarf-2 
+-o "SampleLEDApplication.elf" 
+"@objects.rsp"  
+-lm
+'Finished building target: SampleLEDApplication.elf'

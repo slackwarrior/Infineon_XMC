@@ -1,0 +1,355 @@
+karol@linux-zdtc:~/Dokumenty/CMakeProjects/003_cmake_XMC_gcc_test_init/Infineon_XMC/build> ls
+CMakeFiles  main.d  main.o  main.o.lst  Startup
+
+karol@linux-zdtc:~/Dokumenty/CMakeProjects/003_cmake_XMC_gcc_test_init/Infineon_XMC> cat ./scratchpad.txt 
+Manual compilation:
+arm-none-eabi-gcc -MMD -DXMC1100_Q024x0064 -I ~/libs/XMC_Peripheral_Library_v2.1.24/XMCLib/inc -I ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Include -I ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Infineon/XMC1100_series/Include -ffunction-sections -fdata-sections -O2 -Wall -Wa,-adhlns="./build/main.o.lst" -std=gnu99 -pipe -c -mcpu=cortex-m0 -mthumb -g -gdwarf-2 -o ./build/main.o ./src/main.c
+(keep attention about spaces after -I option)
+
+arm-none-eabi-gcc  -x assembler-with-cpp -DXMC1100_Q024x0064 -Wall -Wa,-adhlns="./build/Startup/startup_XMC1100.o.lst" -c -mcpu=cortex-m0 -mthumb -g -gdwarf-2 -o build/Startup/startup_XMC1100.o ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Infineon/XMC1100_series/Source/GCC/startup_XMC1100.S
+
+karol@linux-zdtc:~/Dokumenty/CMakeProjects/003_cmake_XMC_gcc_test_init/Infineon_XMC> export PATH=~/bin/gcc-arm-none-eabi-9-2019-q4-major/bin:$PATH
+
+karol@linux-zdtc:~/Dokumenty/CMakeProjects/003_cmake_XMC_gcc_test_init/Infineon_XMC> arm-none-eabi-gcc -DXMC1100_Q024x0064 -I ~/libs/XMC_Peripheral_Library_v2.1.24/XMCLib/inc -I ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Include -I ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Infineon/XMC1100_series/Include -O0 -Wall -std=gnu99 -Wa,-adhlns="build/Startup/system_XMC1100.o.lst" -pipe -c -fmessage-length=0 -mcpu=cortex-m0 -mthumb -g -gdwarf-2 -o "build/Startup/" ~/libs/XMC_Peripheral_Library_v2.1.24/XMCLib/src/xmc 
+xmc1_eru.c                xmc4_eru.c                xmc_acmp.c                xmc_common.c              xmc_ecat.c                xmc_eth_phy_ksz8081rnb.c  xmc_i2s.c                 xmc_prng.c                xmc_usbd.c                
+xmc1_flash.c              xmc4_flash.c              xmc_bccu.c                xmc_dac.c                 xmc_eru.c                 xmc_fce.c                 xmc_ledts.c               xmc_rtc.c                 xmc_usbh.c                
+xmc1_gpio.c               xmc4_gpio.c               xmc_can.c                 xmc_dma.c                 xmc_eth_mac.c             xmc_gpio.c                xmc_math.c                xmc_sdmmc.c               xmc_usic.c                
+xmc1_rtc.c                xmc4_rtc.c                xmc_ccu4.c                xmc_dsd.c                 xmc_eth_phy_dp83848.c     xmc_hrpwm.c               xmc_pau.c                 xmc_spi.c                 xmc_vadc.c                
+xmc1_scu.c                xmc4_scu.c                xmc_ccu8.c                xmc_ebu.c                 xmc_eth_phy_ksz8031rnl.c  xmc_i2c.c                 xmc_posif.c               xmc_uart.c                xmc_wdt.c                 
+
+karol@linux-zdtc:~/Dokumenty/CMakeProjects/003_cmake_XMC_gcc_test_init/Infineon_XMC> arm-none-eabi-gcc -DXMC1100_Q024x0064 -I ~/libs/XMC_Peripheral_Library_v2.1.24/XMCLib/inc -I ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Include -I ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Infineon/XMC1100_series/Include -O0 -Wall -std=gnu99 -Wa,-adhlns="build/Startup/system_XMC1100.o.lst" -pipe -c -fmessage-length=0 -mcpu=cortex-m0 -mthumb -g -gdwarf-2 -o "build/Startup/" ~/libs/XMC_Peripheral_Library_v2.1.24/XMCLib/          
+doc/         examples/    inc/         License.txt  Readme.txt   src/         
+
+karol@linux-zdtc:~/Dokumenty/CMakeProjects/003_cmake_XMC_gcc_test_init/Infineon_XMC> arm-none-eabi-gcc -DXMC1100_Q024x0064 -I ~/libs/XMC_Peripheral_Library_v2.1.24/XMCLib/inc -I ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Include -I ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Infineon/XMC1100_series/Include -O0 -Wall -std=gnu99 -Wa,-adhlns="build/Startup/system_XMC1100.o.lst" -pipe -c -fmessage-length=0 -mcpu=cortex-m0 -mthumb -g -gdwarf-2 -o "build/Startup/" ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/  
+CMSIS_END_USER_LICENCE_AGREEMENT.pdf  Core/                                 DSP/                                  index.html                            LICENSE.txt                           RTOS/                                 
+CMSIS_END_USER_LICENCE_AGREEMENT.rtf  Documentation/                        Include/                              Infineon/                             NN/                                   RTOS2/                                
+
+karol@linux-zdtc:~/Dokumenty/CMakeProjects/003_cmake_XMC_gcc_test_init/Infineon_XMC> arm-none-eabi-gcc -DXMC1100_Q024x0064 -I ~/libs/XMC_Peripheral_Library_v2.1.24/XMCLib/inc -I ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Include -I ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Infineon/XMC1100_series/Include -O0 -Wall -std=gnu99 -Wa,-adhlns="build/Startup/system_XMC1100.o.lst" -pipe -c -fmessage-length=0 -mcpu=cortex-m0 -mthumb -g -gdwarf-2 -o "build/Startup/" ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/In 
+Include/  Infineon/ 
+
+karol@linux-zdtc:~/Dokumenty/CMakeProjects/003_cmake_XMC_gcc_test_init/Infineon_XMC> arm-none-eabi-gcc -DXMC1100_Q024x0064 -I ~/libs/XMC_Peripheral_Library_v2.1.24/XMCLib/inc -I ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Include -I ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Infineon/XMC1100_series/Include -O0 -Wall -std=gnu99 -Wa,-adhlns="build/Startup/system_XMC1100.o.lst" -pipe -c -fmessage-length=0 -mcpu=cortex-m0 -mthumb -g -gdwarf-2 -o "build/Startup/" ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Infineon/ 
+SVD/            TLE986x_series/ TLE987x_series/ XMC1100_series/ XMC1200_series/ XMC1300_series/ XMC1400_series/ XMC4100_series/ XMC4200_series/ XMC4300_series/ XMC4400_series/ XMC4500_series/ XMC4700_series/ XMC4800_series/ 
+karol@linux-zdtc:~/Dokumenty/CMakeProjects/003_cmake_XMC_gcc_test_init/Infineon_XMC> arm-none-eabi-gcc -DXMC1100_Q024x0064 -I ~/libs/XMC_Peripheral_Library_v2.1.24/XMCLib/inc -I ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Include -I ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Infineon/XMC1100_series/Include -O0 -Wall -std=gnu99 -Wa,-adhlns="build/Startup/system_XMC1100.o.lst" -pipe -c -fmessage-length=0 -mcpu=cortex-m0 -mthumb -g -gdwarf-2 -o "build/Startup/" ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Infineon/XMC1100_series/ 
+Include/ Source/  
+karol@linux-zdtc:~/Dokumenty/CMakeProjects/003_cmake_XMC_gcc_test_init/Infineon_XMC> arm-none-eabi-gcc -DXMC1100_Q024x0064 -I ~/libs/XMC_Peripheral_Library_v2.1.24/XMCLib/inc -I ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Include -I ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Infineon/XMC1100_series/Include -O0 -Wall -std=gnu99 -Wa,-adhlns="build/Startup/system_XMC1100.o.lst" -pipe -c -fmessage-length=0 -mcpu=cortex-m0 -mthumb -g -gdwarf-2 -o "build/Startup/" ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Infineon/XMC1100_series/Source/ 
+ARM/              ARM6/             GCC/              IAR/              system_XMC1100.c  
+karol@linux-zdtc:~/Dokumenty/CMakeProjects/003_cmake_XMC_gcc_test_init/Infineon_XMC> arm-none-eabi-gcc -DXMC1100_Q024x0064 -I ~/libs/XMC_Peripheral_Library_v2.1.24/XMCLib/inc -I ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Include -I ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Infineon/XMC1100_series/Include -O0 -Wall -std=gnu99 -Wa,-adhlns="build/Startup/system_XMC1100.o.lst" -pipe -c -fmessage-length=0 -mcpu=cortex-m0 -mthumb -g -gdwarf-2 -o "build/Startup/" ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Infineon/XMC1100_series/Source/GCC/ 
+startup_XMC1100.S  XMC1100x0008.ld    XMC1100x0016.ld    XMC1100x0032.ld    XMC1100x0064.ld    
+karol@linux-zdtc:~/Dokumenty/CMakeProjects/003_cmake_XMC_gcc_test_init/Infineon_XMC> arm-none-eabi-gcc -DXMC1100_Q024x0064 -I ~/libs/XMC_Peripheral_Library_v2.1.24/XMCLib/inc -I ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Include -I ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Infineon/XMC1100_series/Include -O0 -Wall -std=gnu99 -Wa,-adhlns="build/Startup/system_XMC1100.o.lst" -pipe -c -fmessage-length=0 -mcpu=cortex-m0 -mthumb -g -gdwarf-2 -o "build/Startup/" ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Infineon/XMC1100_series/          Include/ Source/  
+karol@linux-zdtc:~/Dokumenty/CMakeProjects/003_cmake_XMC_gcc_test_init/Infineon_XMC> arm-none-eabi-gcc -DXMC1100_Q024x0064 -I ~/libs/XMC_Peripheral_Library_v2.1.24/XMCLib/inc -I ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Include -I ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Infineon/XMC1100_series/Include -O0 -Wall -std=gnu99 -Wa,-adhlns="build/Startup/system_XMC1100.o.lst" -pipe -c -fmessage-length=0 -mcpu=cortex-m0 -mthumb -g -gdwarf-2 -o "build/Startup/" ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Infineon/XMC1100_series/Source/ 
+ARM/              ARM6/             GCC/              IAR/              system_XMC1100.c  
+karol@linux-zdtc:~/Dokumenty/CMakeProjects/003_cmake_XMC_gcc_test_init/Infineon_XMC> arm-none-eabi-gcc -DXMC1100_Q024x0064 -I ~/libs/XMC_Peripheral_Library_v2.1.24/XMCLib/inc -I ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Include -I ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Infineon/XMC1100_series/Include -O0 -Wall -std=gnu99 -Wa,-adhlns="build/Startup/system_XMC1100.o.lst" -pipe -c -fmessage-length=0 -mcpu=cortex-m0 -mthumb -g -gdwarf-2 -o "build/Startup/s" ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Infineon/XMC1100_series/Source/system_XMC1100.c  
+startup_XMC1100.o      startup_XMC1100.o.lst  system_XMC1100.o       system_XMC1100.o.lst   
+karol@linux-zdtc:~/Dokumenty/CMakeProjects/003_cmake_XMC_gcc_test_init/Infineon_XMC> arm-none-eabi-gcc -DXMC1100_Q024x0064 -I ~/libs/XMC_Peripheral_Library_v2.1.24/XMCLib/inc -I ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Include -I ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Infineon/XMC1100_series/Include -O0 -Wall -std=gnu99 -Wa,-adhlns="build/Startup/system_XMC1100.o.lst" -pipe -c -fmessage-length=0 -mcpu=cortex-m0 -mthumb -g -gdwarf-2 -o "build/Startup/system_XMC1100.o" ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Infineon/XMC1100_series/Source/system_XMC1100.c  
+karol@linux-zdtc:~/Dokumenty/CMakeProjects/003_cmake_XMC_gcc_test_init/Infineon_XMC> arm-none-eabi-gcc -DXMC1100_Q024x0064 -I ~/libs/XMC_Peripheral_Library_v2.1.24/XMCLib/inc -I ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Include -I ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Infineon/XMC1100_series/Include -O0 -Wall -std=gnu99 -Wa,-adhlns="build/Startup/system_XMC1100.o.lst" -pipe -c -fmessage-length=0 -mcpu=cortex-m0 -mthumb -g -gdwarf-2 -o "build/Startup/system_XMC1100.o" ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Infineon/XMC1100_series/
+Include/ Source/  
+karol@linux-zdtc:~/Dokumenty/CMakeProjects/003_cmake_XMC_gcc_test_init/Infineon_XMC> arm-none-eabi-gcc -DXMC1100_Q024x0064 -I ~/libs/XMC_Peripheral_Library_v2.1.24/XMCLib/inc -I ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Include -I ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Infineon/XMC1100_series/Include -O0 -Wall -std=gnu99 -Wa,-adhlns="build/Startup/system_XMC1100.o.lst" -pipe -c -fmessage-length=0 -mcpu=cortex-m0 -mthumb -g -gdwarf-2 -o "build/Startup/system_XMC1100.o" ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Infineon/XMC1100_series/Source/
+ARM/              ARM6/             GCC/              IAR/              system_XMC1100.c  
+karol@linux-zdtc:~/Dokumenty/CMakeProjects/003_cmake_XMC_gcc_test_init/Infineon_XMC> arm-none-eabi-gcc -DXMC1100_Q024x0064 -I ~/libs/XMC_Peripheral_Library_v2.1.24/XMCLib/inc -I ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Include -I ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Infineon/XMC1100_series/Include -O0 -Wall -std=gnu99 -Wa,-adhlns="build/Startup/system_XMC1100.o.lst" -pipe -c -fmessage-length=0 -mcpu=cortex-m0 -mthumb -g -gdwarf-2 -o "build/Startup/system_XMC1100.o" ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Infineon/XMC1100_series/Source/GCC/
+startup_XMC1100.S  XMC1100x0008.ld    XMC1100x0016.ld    XMC1100x0032.ld    XMC1100x0064.ld    
+karol@linux-zdtc:~/Dokumenty/CMakeProjects/003_cmake_XMC_gcc_test_init/Infineon_XMC> arm-none-eabi-gcc -DXMC1100_Q024x0064 -I ~/libs/XMC_Peripheral_Library_v2.1.24/XMCLib/inc -I ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Include -I ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Infineon/XMC1100_series/Include -O0 -Wall -std=gnu99 -Wa,-adhlns="build/Startup/system_XMC1100.o.lst" -pipe -c -fmessage-length=0 -mcpu=cortex-m0 -mthumb -g -gdwarf-2 -o "build/Startup/system_XMC1100.o" ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/In
+Include/  Infineon/ 
+karol@linux-zdtc:~/Dokumenty/CMakeProjects/003_cmake_XMC_gcc_test_init/Infineon_XMC> arm-none-eabi-gcc -DXMC1100_Q024x0064 -I ~/libs/XMC_Peripheral_Library_v2.1.24/XMCLib/inc -I ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Include -I ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Infineon/XMC1100_series/Include -O0 -Wall -std=gnu99 -Wa,-adhlns="build/Startup/system_XMC1100.o.lst" -pipe -c -fmessage-length=0 -mcpu=cortex-m0 -mthumb -g -gdwarf-2 -o "build/Startup/system_XMC1100.o" ~/libs/XMC_Peripheral_Library_v2.1.24/XMCLib/
+doc/         examples/    inc/         License.txt  Readme.txt   src/         
+karol@linux-zdtc:~/Dokumenty/CMakeProjects/003_cmake_XMC_gcc_test_init/Infineon_XMC> arm-none-eabi-gcc -DXMC1100_Q024x0064 -I ~/libs/XMC_Peripheral_Library_v2.1.24/XMCLib/inc -I ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Include -I ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Infineon/XMC1100_series/Include -O0 -Wall -std=gnu99 -Wa,-adhlns="build/Startup/system_XMC1100.o.lst" -pipe -c -fmessage-length=0 -mcpu=cortex-m0 -mthumb -g -gdwarf-2 -o "build/Startup/system_XMC1100.o" ~/libs/XMC_Peripheral_Library_v2.1.24/XMCLib/src/xmc
+xmc1_eru.c                xmc4_eru.c                xmc_acmp.c                xmc_common.c              xmc_ecat.c                xmc_eth_phy_ksz8081rnb.c  xmc_i2s.c                 xmc_prng.c                xmc_usbd.c                
+xmc1_flash.c              xmc4_flash.c              xmc_bccu.c                xmc_dac.c                 xmc_eru.c                 xmc_fce.c                 xmc_ledts.c               xmc_rtc.c                 xmc_usbh.c                
+xmc1_gpio.c               xmc4_gpio.c               xmc_can.c                 xmc_dma.c                 xmc_eth_mac.c             xmc_gpio.c                xmc_math.c                xmc_sdmmc.c               xmc_usic.c                
+xmc1_rtc.c                xmc4_rtc.c                xmc_ccu4.c                xmc_dsd.c                 xmc_eth_phy_dp83848.c     xmc_hrpwm.c               xmc_pau.c                 xmc_spi.c                 xmc_vadc.c                
+xmc1_scu.c                xmc4_scu.c                xmc_ccu8.c                xmc_ebu.c                 xmc_eth_phy_ksz8031rnl.c  xmc_i2c.c                 xmc_posif.c               xmc_uart.c                xmc_wdt.c                 
+karol@linux-zdtc:~/Dokumenty/CMakeProjects/003_cmake_XMC_gcc_test_init/Infineon_XMC> arm-none-eabi-gcc -DXMC1100_Q024x0064 -I ~/libs/XMC_Peripheral_Library_v2.1.24/XMCLib/inc -I ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Include -I ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Infineon/XMC1100_series/Include -O0 -Wall -std=gnu99 -Wa,-adhlns="build/xmc1_flash.o.lst" -pipe -c -fmessage-length=0 -mcpu=cortex-m0 -mthumb -g -gdwarf-2 -o "build/xmc1_flash.o" ~/libs/XMC_Peripheral_Library_v2.1.24/XMCLib/src/xmc1_flash.c                         karol@linux-zdtc:~/Dokumenty/CMakeProjects/003_cmake_XMC_gcc_test_init/Infineon_XMC> arm-none-eabi-gcc -DXMC1100_Q024x0064 -I ~/libs/XMC_Peripheral_Library_v2.1.24/XMCLib/inc -I ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Include -I ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Infineon/XMC1100_series/Include -O0 -Wall -std=gnu99 -Wa,-adhlns="build/xmc1_gpio.o.lst" -pipe -c -fmessage-length=0 -mcpu=cortex-m0 -mthumb -g -gdwarf-2 -o "build/xmc1_gpio.o" ~/libs/XMC_Peripheral_Library_v2.1.24/XMCLib/src/xmc1_gpio.c                      
+karol@linux-zdtc:~/Dokumenty/CMakeProjects/003_cmake_XMC_gcc_test_init/Infineon_XMC> arm-none-eabi-gcc -DXMC1100_Q024x0064 -I ~/libs/XMC_Peripheral_Library_v2.1.24/XMCLib/inc -I ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Include -I ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Infineon/XMC1100_series/Include -O0 -Wall -std=gnu99 -Wa,-adhlns="build/xmc1_rtc.o.lst" -pipe -c -fmessage-length=0 -mcpu=cortex-m0 -mthumb -g -gdwarf-2 -o "build/xmc1_rtc.o" ~/libs/XMC_Peripheral_Library_v2.1.24/XMCLib/src/xmc1_rtc.c                   
+karol@linux-zdtc:~/Dokumenty/CMakeProjects/003_cmake_XMC_gcc_test_init/Infineon_XMC> arm-none-eabi-gcc -DXMC1100_Q024x0064 -I ~/libs/XMC_Peripheral_Library_v2.1.24/XMCLib/inc -I ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Include -I ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Infineon/XMC1100_series/Include -O0 -Wall -std=gnu99 -Wa,-adhlns="build/xmc_common.o.lst" -pipe -c -fmessage-length=0 -mcpu=cortex-m0 -mthumb -g -gdwarf-2 -o "build/xmc_common.o" ~/libs/XMC_Peripheral_Library_v2.1.24/XMCLib/src/xmc_common.c                 
+karol@linux-zdtc:~/Dokumenty/CMakeProjects/003_cmake_XMC_gcc_test_init/Infineon_XMC> arm-none-eabi-gcc -DXMC1100_Q024x0064 -I ~/libs/XMC_Peripheral_Library_v2.1.24/XMCLib/inc -I ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Include -I ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Infineon/XMC1100_series/Include -O0 -Wall -std=gnu99 -Wa,-adhlns="build/xmc_gpio.o.lst" -pipe -c -fmessage-length=0 -mcpu=cortex-m0 -mthumb -g -gdwarf-2 -o "build/xmc_gpio.o" ~/libs/XMC_Peripheral_Library_v2.1.24/XMCLib/src/xmc_gpio.c                               
+karol@linux-zdtc:~/Dokumenty/CMakeProjects/003_cmake_XMC_gcc_test_init/Infineon_XMC> arm-none-eabi-gcc -DXMC1100_Q024x0064 -I ~/libs/XMC_Peripheral_Library_v2.1.24/XMCLib/inc -I ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Include -I ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Infineon/XMC1100_series/Include -O0 -Wall -std=gnu99 -Wa,-adhlns="build/syscalls.o.lst" -pipe -c -fmessage-length=0 -mcpu=cortex-m0 -mthumb -g -gdwarf-2 -o "build/syscalls.o" ~/libs/XMC_Peripheral_Library_v2.1.24/ThirdPartyLibraries/Newlib/syscalls.c               
+karol@linux-zdtc:~/Dokumenty/CMakeProjects/003_cmake_XMC_gcc_test_init/Infineon_XMC> arm-none-eabi-gcc -DXMC1100_Q024x0064 -I ~/libs/XMC_Peripheral_Library_v2.1.24/XMCLib/inc -I ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Include -I ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Infineon/XMC1100_series/Include -O0 -Wall -std=gnu99 -Wa,-adhlns="build/xmc_gpio.o.lst" -pipe -c -fmessage-length=0 -mcpu=cortex-m0 -mthumb -g -gdwarf-2 -o "build/xmc_gpio.o" ~/libs/XMC_Peripheral_Library_v2.1.24/XMCLib/src/xmc                         
+xmc1_eru.c                xmc4_eru.c                xmc_acmp.c                xmc_common.c              xmc_ecat.c                xmc_eth_phy_ksz8081rnb.c  xmc_i2s.c                 xmc_prng.c                xmc_usbd.c                
+xmc1_flash.c              xmc4_flash.c              xmc_bccu.c                xmc_dac.c                 xmc_eru.c                 xmc_fce.c                 xmc_ledts.c               xmc_rtc.c                 xmc_usbh.c                
+xmc1_gpio.c               xmc4_gpio.c               xmc_can.c                 xmc_dma.c                 xmc_eth_mac.c             xmc_gpio.c                xmc_math.c                xmc_sdmmc.c               xmc_usic.c                
+xmc1_rtc.c                xmc4_rtc.c                xmc_ccu4.c                xmc_dsd.c                 xmc_eth_phy_dp83848.c     xmc_hrpwm.c               xmc_pau.c                 xmc_spi.c                 xmc_vadc.c                
+xmc1_scu.c                xmc4_scu.c                xmc_ccu8.c                xmc_ebu.c                 xmc_eth_phy_ksz8031rnl.c  xmc_i2c.c                 xmc_posif.c               xmc_uart.c                xmc_wdt.c                 
+karol@linux-zdtc:~/Dokumenty/CMakeProjects/003_cmake_XMC_gcc_test_init/Infineon_XMC> arm-none-eabi-gcc -DXMC1100_Q024x0064 -I ~/libs/XMC_Peripheral_Library_v2.1.24/XMCLib/inc -I ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Include -I ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Infineon/XMC1100_series/Include -O0 -Wall -std=gnu99 -Wa,-adhlns="build/xmc_gpio.o.lst" -pipe -c -fmessage-length=0 -mcpu=cortex-m0 -mthumb -g -gdwarf-2 -o "build/xmc_gpio.o" ~/libs/XMC_Peripheral_Library_v2.1.24/XMCLib/src/xmc_c 
+xmc_can.c     xmc_ccu4.c    xmc_ccu8.c    xmc_common.c  
+karol@linux-zdtc:~/Dokumenty/CMakeProjects/003_cmake_XMC_gcc_test_init/Infineon_XMC> arm-none-eabi-gcc -DXMC1100_Q024x0064 -I ~/libs/XMC_Peripheral_Library_v2.1.24/XMCLib/inc -I ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Include -I ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Infineon/XMC1100_series/Include -O0 -Wall -std=gnu99 -Wa,-adhlns="build/xmc_gpio.o.lst" -pipe -c -fmessage-length=0 -mcpu=cortex-m0 -mthumb -g -gdwarf-2 -o "build/xmc_gpio.o" ~/libs/XMC_Peripheral_Library_v2.1.24/XMCLib/src/xmc_c 
+xmc_can.c     xmc_ccu4.c    xmc_ccu8.c    xmc_common.c  
+karol@linux-zdtc:~/Dokumenty/CMakeProjects/003_cmake_XMC_gcc_test_init/Infineon_XMC> arm-none-eabi-gcc -T ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Infineon/
+SVD/            TLE986x_series/ TLE987x_series/ XMC1100_series/ XMC1200_series/ XMC1300_series/ XMC1400_series/ XMC4100_series/ XMC4200_series/ XMC4300_series/ XMC4400_series/ XMC4500_series/ XMC4700_series/ XMC4800_series/ 
+karol@linux-zdtc:~/Dokumenty/CMakeProjects/003_cmake_XMC_gcc_test_init/Infineon_XMC> arm-none-eabi-gcc -T ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Infineon/XMC
+XMC1100_series/ XMC1200_series/ XMC1300_series/ XMC1400_series/ XMC4100_series/ XMC4200_series/ XMC4300_series/ XMC4400_series/ XMC4500_series/ XMC4700_series/ XMC4800_series/ 
+karol@linux-zdtc:~/Dokumenty/CMakeProjects/003_cmake_XMC_gcc_test_init/Infineon_XMC> arm-none-eabi-gcc -T ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Infineon/XMC1100_series/
+Include/ Source/  
+karol@linux-zdtc:~/Dokumenty/CMakeProjects/003_cmake_XMC_gcc_test_init/Infineon_XMC> arm-none-eabi-gcc -T ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Infineon/XMC1100_series/Source/
+ARM/              ARM6/             GCC/              IAR/              system_XMC1100.c  
+karol@linux-zdtc:~/Dokumenty/CMakeProjects/003_cmake_XMC_gcc_test_init/Infineon_XMC> arm-none-eabi-gcc -T ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Infineon/XMC1100_series/Source/GCC/
+startup_XMC1100.S  XMC1100x0008.ld    XMC1100x0016.ld    XMC1100x0032.ld    XMC1100x0064.ld    
+karol@linux-zdtc:~/Dokumenty/CMakeProjects/003_cmake_XMC_gcc_test_init/Infineon_XMC> arm-none-eabi-gcc -T ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Infineon/XMC1100_series/Source/GCC/
+startup_XMC1100.S  XMC1100x0008.ld    XMC1100x0016.ld    XMC1100x0032.ld    XMC1100x0064.ld    
+karol@linux-zdtc:~/Dokumenty/CMakeProjects/003_cmake_XMC_gcc_test_init/Infineon_XMC> arm-none-eabi-gcc -T ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Infineon/XMC1100_series/Source/GCC/
+startup_XMC1100.S  XMC1100x0008.ld    XMC1100x0016.ld    XMC1100x0032.ld    XMC1100x0064.ld    
+karol@linux-zdtc:~/Dokumenty/CMakeProjects/003_cmake_XMC_gcc_test_init/Infineon_XMC> arm-none-eabi-gcc -T ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Infineon/XMC1100_series/Source/GCC/XMC1100x0064.ld -nostartfiles -Xlinker --gc-sections -specs=nano.specs -specs=nosys.specs -Wl,-Map,"build/MainApp.map" -mcpu=cortex-m0 -mcpu=cortex-m0 -g -gdwarf-2 -o "build/MainApp.elf" ./build/Startup/startup_XMC1100.o ./build/Startup/system_XMC1100.o ./build/ -lm
+CMakeFiles/       main.o            Startup/          syscalls.o.lst    xmc1_flash.o.lst  xmc1_gpio.o.lst   xmc1_rtc.o.lst    xmc_common.o.lst  xmc_gpio.o.lst    
+main.d            main.o.lst        syscalls.o        xmc1_flash.o      xmc1_gpio.o       xmc1_rtc.o        xmc_common.o      xmc_gpio.o        
+karol@linux-zdtc:~/Dokumenty/CMakeProjects/003_cmake_XMC_gcc_test_init/Infineon_XMC> arm-none-eabi-gcc -T ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Infineon/XMC1100_series/Source/GCC/XMC1100x0064.ld -nostartfiles -Xlinker --gc-sections -specs=nano.specs -specs=nosys.specs -Wl,-Map,"build/MainApp.map" -mcpu=cortex-m0 -mcpu=cortex-m0 -g -gdwarf-2 -o "build/MainApp.elf" ./build/Startup/startup_XMC1100.o ./build/Startup/system_XMC1100.o ./build/xmc1_gpio.o ./build/xmc -lm
+xmc1_flash.o      xmc1_flash.o.lst  xmc1_gpio.o       xmc1_gpio.o.lst   xmc1_rtc.o        xmc1_rtc.o.lst    xmc_common.o      xmc_common.o.lst  xmc_gpio.o        xmc_gpio.o.lst    
+karol@linux-zdtc:~/Dokumenty/CMakeProjects/003_cmake_XMC_gcc_test_init/Infineon_XMC> arm-none-eabi-gcc -T ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Infineon/XMC1100_series/Source/GCC/XMC1100x0064.ld -nostartfiles -Xlinker --gc-sections -specs=nano.specs -specs=nosys.specs -Wl,-Map,"build/MainApp.map" -mcpu=cortex-m0 -mcpu=cortex-m0 -g -gdwarf-2 -o "build/MainApp.elf" ./build/Startup/startup_XMC1100.o ./build/Startup/system_XMC1100.o ./build/xmc1_gpio.o ./build/xmc_gpio.o ./build/syscalls.o ./build/main. -lm 
+main.d      main.o      main.o.lst  
+karol@linux-zdtc:~/Dokumenty/CMakeProjects/003_cmake_XMC_gcc_test_init/Infineon_XMC> arm-none-eabi-gcc -T ~/libs/XMC_Peripheral_Library_v2.1.24/CMSIS/Infineon/XMC1100_series/Source/GCC/XMC1100x0064.ld -nostartfiles -Xlinker --gc-sections -specs=nano.specs -specs=nosys.specs -Wl,-Map,"build/MainApp.map" -mcpu=cortex-m0 -mcpu=cortex-m0 -g -gdwarf-2 -o "build/MainApp.elf" ./build/Startup/startup_XMC1100.o ./build/Startup/system_XMC1100.o ./build/xmc1_gpio.o ./build/xmc_gpio.o ./build/syscalls.o ./build/main.o -lm
+karol@linux-zdtc:~/Dokumenty/CMakeProjects/003_cmake_XMC_gcc_test_init/Infineon_XMC> ls
+build  cmake  CMakeCache.txt  CMakeFiles  CMakeLists.txt  LICENSE  README.md  scratchpad.txt  src
+karol@linux-zdtc:~/Dokumenty/CMakeProjects/003_cmake_XMC_gcc_test_init/Infineon_XMC> ls ./build/
+CMakeFiles  MainApp.elf  MainApp.map  main.d  main.o  main.o.lst  Startup  syscalls.o  syscalls.o.lst  xmc1_flash.o  xmc1_flash.o.lst  xmc1_gpio.o  xmc1_gpio.o.lst  xmc1_rtc.o  xmc1_rtc.o.lst  xmc_common.o  xmc_common.o.lst  xmc_gpio.o  xmc_gpio.o.lst
+karol@linux-zdtc:~/Dokumenty/CMakeProjects/003_cmake_XMC_gcc_test_init/Infineon_XMC> arm-none-eabi-objcopy -O ihex ./build/MainApp.elf ./build/MainApp.hex 
+karol@linux-zdtc:~/Dokumenty/CMakeProjects/003_cmake_XMC_gcc_test_init/Infineon_XMC> arm-none-eabi-size --format=berkeley ./build/MainApp.elf 
+   text    data     bss     dec     hex filename
+   1464     100    1052    2616     a38 ./build/MainApp.elf
+karol@linux-zdtc:~/Dokumenty/CMakeProjects/003_cmake_XMC_gcc_test_init/Infineon_XMC> arm-none-eabi-objdump -h -S "build/MainApp.elf" > ./build/MainApp.lst
+karol@linux-zdtc:~/Dokumenty/CMakeProjects/003_cmake_XMC_gcc_test_init/Infineon_XMC> ls
+build  cmake  CMakeCache.txt  CMakeFiles  CMakeLists.txt  LICENSE  README.md  scratchpad.txt  src
+karol@linux-zdtc:~/Dokumenty/CMakeProjects/003_cmake_XMC_gcc_test_init/Infineon_XMC> cd build/
+karol@linux-zdtc:~/Dokumenty/CMakeProjects/003_cmake_XMC_gcc_test_init/Infineon_XMC/build> ls
+CMakeFiles   MainApp.hex  MainApp.map  main.o      Startup     syscalls.o.lst  xmc1_flash.o.lst  xmc1_gpio.o.lst  xmc1_rtc.o.lst  xmc_common.o.lst  xmc_gpio.o.lst
+MainApp.elf  MainApp.lst  main.d       main.o.lst  syscalls.o  xmc1_flash.o    xmc1_gpio.o       xmc1_rtc.o       xmc_common.o    xmc_gpio.o
+karol@linux-zdtc:~/Dokumenty/CMakeProjects/003_cmake_XMC_gcc_test_init/Infineon_XMC/build> vim ./MainApp.lst 
+karol@linux-zdtc:~/Dokumenty/CMakeProjects/003_cmake_XMC_gcc_test_init/Infineon_XMC/build> ls ~/bin/JLink_Linux_V6
+JLink_Linux_V662c_x86_64/ JLink_Linux_V686a_x86_64/ 
+karol@linux-zdtc:~/Dokumenty/CMakeProjects/003_cmake_XMC_gcc_test_init/Infineon_XMC/build> ls ~/bin/JLink_Linux_V686a_x86_64/
+99-jlink.rules             JFlashLiteExe              JLinkExe                   JLinkLicenseManagerExe     JLinkRTTClient             JLinkSTM32Exe              JTAGLoadExe                libjlinkarm_x86.so.6.86.1  libQtGui.so.4              x86/
+Devices/                   JFlashSPI_CL               JLinkGDBServer             JLinkRegistration          JLinkRTTClientExe          JLinkSWOViewer             libjlinkarm.so             libQtCore.so               libQtGui.so.4.8            
+Doc/                       JFlashSPICLExe             JLinkGDBServerCLExe        JLinkRegistrationExe       JLinkRTTLogger             JLinkSWOViewerCLExe        libjlinkarm.so.6           libQtCore.so.4             libQtGui.so.4.8.7          
+ETC/                       JFlashSPIExe               JLinkGDBServerExe          JLinkRemoteServer          JLinkRTTLoggerExe          JLinkSWOViewerExe          libjlinkarm.so.6.86.1      libQtCore.so.4.8           README.txt                 
+GDBServer/                 JLinkConfigExe             JLinkGUIServerExe          JLinkRemoteServerCLExe     JLinkRTTViewerExe          JMemExe                    libjlinkarm_x86.so         libQtCore.so.4.8.7         Samples/                   
+JFlashExe                  JLinkDevices.xml           JLinkLicenseManager        JLinkRemoteServerExe       JLinkSTM32                 JRunExe                    libjlinkarm_x86.so.6       libQtGui.so                ThirdParty/                
+karol@linux-zdtc:~/Dokumenty/CMakeProjects/003_cmake_XMC_gcc_test_init/Infineon_XMC/build> export PATH=$PATH:~/bin/JLink_Linux_V686a_x86_64
+karol@linux-zdtc:~/Dokumenty/CMakeProjects/003_cmake_XMC_gcc_test_init/Infineon_XMC/build> ls
+CMakeFiles   MainApp.hex  MainApp.map  main.o      Startup     syscalls.o.lst  xmc1_flash.o.lst  xmc1_gpio.o.lst  xmc1_rtc.o.lst  xmc_common.o.lst  xmc_gpio.o.lst
+MainApp.elf  MainApp.lst  main.d       main.o.lst  syscalls.o  xmc1_flash.o    xmc1_gpio.o       xmc1_rtc.o       xmc_common.o    xmc_gpio.o
+karol@linux-zdtc:~/Dokumenty/CMakeProjects/003_cmake_XMC_gcc_test_init/Infineon_XMC/build> cd ..
+karol@linux-zdtc:~/Dokumenty/CMakeProjects/003_cmake_XMC_gcc_test_init/Infineon_XMC> JLink
+JLinkConfigExe          JLinkGDBServerCLExe     JLinkLicenseManager     JLinkRegistrationExe    JLinkRemoteServerExe    JLinkRTTLogger          JLinkSTM32              JLinkSWOViewerCLExe     
+JLinkExe                JLinkGDBServerExe       JLinkLicenseManagerExe  JLinkRemoteServer       JLinkRTTClient          JLinkRTTLoggerExe       JLinkSTM32Exe           JLinkSWOViewerExe       
+JLinkGDBServer          JLinkGUIServerExe       JLinkRegistration       JLinkRemoteServerCLExe  JLinkRTTClientExe       JLinkRTTViewerExe       JLinkSWOViewer          
+karol@linux-zdtc:~/Dokumenty/CMakeProjects/003_cmake_XMC_gcc_test_init/Infineon_XMC> JLink
+JLinkConfigExe          JLinkGDBServerCLExe     JLinkLicenseManager     JLinkRegistrationExe    JLinkRemoteServerExe    JLinkRTTLogger          JLinkSTM32              JLinkSWOViewerCLExe     
+JLinkExe                JLinkGDBServerExe       JLinkLicenseManagerExe  JLinkRemoteServer       JLinkRTTClient          JLinkRTTLoggerExe       JLinkSTM32Exe           JLinkSWOViewerExe       
+JLinkGDBServer          JLinkGUIServerExe       JLinkRegistration       JLinkRemoteServerCLExe  JLinkRTTClientExe       JLinkRTTViewerExe       JLinkSWOViewer          
+karol@linux-zdtc:~/Dokumenty/CMakeProjects/003_cmake_XMC_gcc_test_init/Infineon_XMC> JLink
+JLinkConfigExe          JLinkGDBServerCLExe     JLinkLicenseManager     JLinkRegistrationExe    JLinkRemoteServerExe    JLinkRTTLogger          JLinkSTM32              JLinkSWOViewerCLExe     
+JLinkExe                JLinkGDBServerExe       JLinkLicenseManagerExe  JLinkRemoteServer       JLinkRTTClient          JLinkRTTLoggerExe       JLinkSTM32Exe           JLinkSWOViewerExe       
+JLinkGDBServer          JLinkGUIServerExe       JLinkRegistration       JLinkRemoteServerCLExe  JLinkRTTClientExe       JLinkRTTViewerExe       JLinkSWOViewer          
+karol@linux-zdtc:~/Dokumenty/CMakeProjects/003_cmake_XMC_gcc_test_init/Infineon_XMC> J
+JFlashExe               JFlashSPICLExe          JLinkExe                JLinkGDBServerExe       JLinkLicenseManagerExe  JLinkRemoteServer       JLinkRTTClient          JLinkRTTLoggerExe       JLinkSTM32Exe           JLinkSWOViewerExe       JTAGLoadExe
+JFlashLiteExe           JFlashSPIExe            JLinkGDBServer          JLinkGUIServerExe       JLinkRegistration       JLinkRemoteServerCLExe  JLinkRTTClientExe       JLinkRTTViewerExe       JLinkSWOViewer          JMemExe                 
+JFlashSPI_CL            JLinkConfigExe          JLinkGDBServerCLExe     JLinkLicenseManager     JLinkRegistrationExe    JLinkRemoteServerExe    JLinkRTTLogger          JLinkSTM32              JLinkSWOViewerCLExe     JRunExe                 
+karol@linux-zdtc:~/Dokumenty/CMakeProjects/003_cmake_XMC_gcc_test_init/Infineon_XMC> JFlash
+JFlashExe       JFlashLiteExe   JFlashSPI_CL    JFlashSPICLExe  JFlashSPIExe    
+karol@linux-zdtc:~/Dokumenty/CMakeProjects/003_cmake_XMC_gcc_test_init/Infineon_XMC> JFlashExe 
+karol@linux-zdtc:~/Dokumenty/CMakeProjects/003_cmake_XMC_gcc_test_init/Infineon_XMC> arm-none-eabi-gdb 
+GNU gdb (GNU Tools for Arm Embedded Processors 9-2019-q4-major) 8.3.0.20190709-git
+Copyright (C) 2019 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "--host=x86_64-linux-gnu --target=arm-none-eabi".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word".
+(gdb) target remote :2331
+Remote debugging using :2331
+warning: No executable has been specified and target does not support
+determining executable automatically.  Try using the "file" command.
+0x10001b28 in ?? ()
+(gdb) monitor reset
+Resetting target
+(gdb) monitor halt
+(gdb) load ./build/
+CMakeFiles/                               MainApp.map                               main.o                                    xmc1_flash.o                              xmc1_rtc.o                                xmc_gpio.o
+MainApp.elf                               Samples\JFlash\ProjectFiles\MyApp.jflash  main.o.lst                                xmc1_flash.o.lst                          xmc1_rtc.o.lst                            xmc_gpio.o.lst
+MainApp.hex                               Startup/                                  syscalls.o                                xmc1_gpio.o                               xmc_common.o                              
+MainApp.lst                               main.d                                    syscalls.o.lst                            xmc1_gpio.o.lst                           xmc_common.o.lst                          
+(gdb) load ./build/MainApp.elf 
+Loading section .text, size 0x4a8 lma 0x10001000
+Loading section .VENEER_Code, size 0x110 lma 0x100014a8
+Loading section .data, size 0x64 lma 0x100015b8
+Start address 0x10001018, load size 1564
+Transfer rate: 763 KB/sec, 521 bytes/write.
+(gdb) monitor go
+(gdb) ?
+Undefined command: "".  Try "help".
+(gdb) help
+List of classes of commands:
+
+aliases -- Aliases of other commands
+breakpoints -- Making program stop at certain points
+data -- Examining data
+files -- Specifying and examining files
+internals -- Maintenance commands
+obscure -- Obscure features
+running -- Running the program
+stack -- Examining the stack
+status -- Status inquiries
+support -- Support facilities
+tracepoints -- Tracing of program execution without stopping the program
+user-defined -- User-defined commands
+
+Type "help" followed by a class name for a list of commands in that class.
+Type "help all" for the list of all commands.
+Type "help" followed by command name for full documentation.
+Type "apropos word" to search for commands related to "word".
+Command name abbreviations are allowed if unambiguous.
+(gdb) help breakpoints
+Making program stop at certain points.
+
+List of commands:
+
+awatch -- Set a watchpoint for an expression
+break -- Set breakpoint at specified location
+break-range -- Set a breakpoint for an address range
+catch -- Set catchpoints to catch events
+catch assert -- Catch failed Ada assertions
+catch catch -- Catch an exception
+catch exception -- Catch Ada exceptions
+catch exec -- Catch calls to exec
+catch fork -- Catch calls to fork
+catch handlers -- Catch Ada exceptions
+catch load -- Catch loads of shared libraries
+catch rethrow -- Catch an exception
+catch signal -- Catch signals by their names and/or numbers
+catch syscall -- Catch system calls by their names
+catch throw -- Catch an exception
+catch unload -- Catch unloads of shared libraries
+catch vfork -- Catch calls to vfork
+clear -- Clear breakpoint at specified location
+commands -- Set commands to be executed when the given breakpoints are hit
+condition -- Specify breakpoint number N to break only if COND is true
+delete -- Delete some breakpoints or auto-display expressions
+delete bookmark -- Delete a bookmark from the bookmark list
+delete breakpoints -- Delete some breakpoints or auto-display expressions
+delete display -- Cancel some expressions to be displayed when program stops
+delete mem -- Delete memory region
+delete tracepoints -- Delete specified tracepoints
+delete tvariable -- Delete one or more trace state variables
+disable -- Disable some breakpoints
+disable breakpoints -- Disable some breakpoints
+disable display -- Disable some expressions to be displayed when program stops
+disable mem -- Disable memory region
+disable probes -- Disable probes
+dprintf -- Set a dynamic printf at specified location
+enable -- Enable some breakpoints
+enable breakpoints -- Enable some breakpoints
+enable breakpoints count -- Enable breakpoints for COUNT hits
+enable breakpoints delete -- Enable breakpoints and delete when hit
+enable breakpoints once -- Enable breakpoints for one hit
+enable count -- Enable breakpoints for COUNT hits
+enable delete -- Enable breakpoints and delete when hit
+enable display -- Enable some expressions to be displayed when program stops
+enable mem -- Enable memory region
+enable once -- Enable breakpoints for one hit
+enable probes -- Enable probes
+ftrace -- Set a fast tracepoint at specified location
+hbreak -- Set a hardware assisted breakpoint
+ignore -- Set ignore-count of breakpoint number N to COUNT
+rbreak -- Set a breakpoint for all functions matching REGEXP
+rwatch -- Set a read watchpoint for an expression
+save -- Save breakpoint definitions as a script
+save breakpoints -- Save current breakpoint definitions as a script
+save gdb-index -- Save a gdb-index file
+save tracepoints -- Save current tracepoint definitions as a script
+skip -- Ignore a function while stepping
+skip delete -- Delete skip entries
+skip disable -- Disable skip entries
+--Type <RET> for more, q to quit, c to continue without paging--help dprintf
+skip enable -- Enable skip entries
+skip file -- Ignore a file while stepping
+skip function -- Ignore a function while stepping
+strace -- Set a static tracepoint at location or marker
+tbreak -- Set a temporary breakpoint
+tcatch -- Set temporary catchpoints to catch events
+tcatch assert -- Catch failed Ada assertions
+tcatch catch -- Catch an exception
+tcatch exception -- Catch Ada exceptions
+tcatch exec -- Catch calls to exec
+tcatch fork -- Catch calls to fork
+tcatch handlers -- Catch Ada exceptions
+tcatch load -- Catch loads of shared libraries
+tcatch rethrow -- Catch an exception
+tcatch signal -- Catch signals by their names and/or numbers
+tcatch syscall -- Catch system calls by their names
+tcatch throw -- Catch an exception
+tcatch unload -- Catch unloads of shared libraries
+tcatch vfork -- Catch calls to vfork
+thbreak -- Set a temporary hardware assisted breakpoint
+trace -- Set a tracepoint at specified location
+watch -- Set a watchpoint for an expression
+
+Type "help" followed by command name for full documentation.
+Type "apropos word" to search for commands related to "word".
+Command name abbreviations are allowed if unambiguous.
+(gdb) help dprintf
+Set a dynamic printf at specified location.
+dprintf location,format string,arg1,arg2,...
+location may be a linespec, explicit, or address location.
+
+Linespecs are colon-separated lists of location parameters, such as
+source filename, function name, label name, and line number.
+Example: To specify the start of a label named "the_top" in the
+function "fact" in the file "factorial.c", use
+"factorial.c:fact:the_top".
+
+Address locations begin with "*" and specify an exact address in the
+program.  Example: To specify the fourth byte past the start function
+"main", use "*main + 4".
+
+Explicit locations are similar to linespecs but use an option/argument
+syntax to specify location parameters.
+Example: To specify the start of the label named "the_top" in the
+function "fact" in the file "factorial.c", use "-source factorial.c
+-function fact -label the_top".
+
+By default, a specified function is matched against the program's
+functions in all scopes.  For C++, this means in all namespaces and
+classes.  For Ada, this means in all packages.  E.g., in C++,
+"func()" matches "A::func()", "A::B::func()", etc.  The
+"-qualified" flag overrides this behavior, making GDB interpret the
+specified name as a complete fully-qualified name instead.
+
+(gdb) monitor reset
+Resetting target
+(gdb) monitor halt
+(gdb) load ~/
+.CLion2019.3/                  .esd_auth                      .java/                         .pipewire-media-session/       .swg                           .viminfo                       .zoom/                         Szablony/
+.STM32CubeProgrammer/          .fltk/                         .kde4/                         .pki/                          .swh                           .vimrc                         Arduino/                       Wideo/
+.Xauthority                    .fonts/                        .local/                        .platformio/                   .swi                           .vimrc.swp                     Documents/                     bin/
+.arduino15/                    .gitconfig                     .mcc/                          .profile                       .swj                           .vnc/                          Dokumenty/                     eclipse-workspace/
+.bash_history                  .gnome/                        .mchp_packs/                   .putty/                        .swk                           .vscode/                       MPLABXProjects/                ipe.key
+.bashrc                        .gnu-emacs                     .minirc.dfl                    .rustup/                       .swl                           .wget-hsts                     Muzyka/                        java_error_in_CLION_13918.log
+.cache/                        .gnupg/                        .mozilla/                      .sane/                         .swm                           .wine/                         Obrazy/                        java_error_in_CLION_6664.log
+.cargo/                        .gphoto/                       .mplab_ide/                    .ssh/                          .swn                           .x11vnc.log.linux-zdtc:5900    Pobrane/                       libs/
+.com.st.app.Main/              .gtkrc-2.0                     .mplab_ipe/                    .stm32cubeide/                 .swo                           .xim.template                  Publiczny/                     
+.config/                       .hplip/                        .mplabcomm/                    .stm32cubemx/                  .swp                           .xinitrc.template              Pulpit/                        
+.eclipse/                      .i18n                          .oracle_jre_usage/             .stmcube/                      .swt/                          .y2control/                    STM32Cube/                     
+.emacs                         .inputrc                       .p2/                           .stmcufinder/                  .vim/                          .y2log                         STM32CubeIDE/                  
+(gdb) load ~/Dokumenty/Projekty/C_proj/Infineon-sample/SampleLEDApplication/Debug/SampleLEDApplication.elf 
+Loading section .text, size 0xce4 lma 0x10001000
+Loading section .VENEER_Code, size 0x110 lma 0x10001ce4
+Loading section .data, size 0x44 lma 0x10001df4
+Start address 0x10001018, load size 3640
+Transfer rate: 3554 KB/sec, 1213 bytes/write.
+(gdb) monitor go
+(gdb) monitor go
+(gdb) monitor reset
+Resetting target
+(gdb) monitor go
+(gdb) monitor reset
+Resetting target
+(gdb) monitor halt
+(gdb) monitor go
+(gdb) help monitor
+Send a command to the remote monitor (remote targets only).
+(gdb) 
+
