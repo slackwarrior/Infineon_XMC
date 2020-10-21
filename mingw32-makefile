@@ -1,8 +1,18 @@
+# Compiler related variables
 CROSS_TOOLS_PATH="c:\Program Files (x86)\gcc_arm_none_eabi\bin"
 CROSS_TOOLS_PREFIX=arm-none-eabi
+GCC_COMPILER=gcc
+
+
+INCLUDE_PATH=
+COMPILER_OPTIONS=
+
+# Library related variables
 XMC_LIBRARY_PATH=
 CMSIS_LIBRARY_PATH="c:\Users\karol\libs\XMC_Peripheral_Library_v2.1.24\CMSIS"
 
+
 LIBRARY_FILES=
 
-GCC_COMPILER=gcc
+# Compilation rules
+
