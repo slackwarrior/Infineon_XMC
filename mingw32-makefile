@@ -11,16 +11,14 @@ COMPILER_OPTIONS=
 XMC_LIBRARY_PATH=
 CMSIS_LIBRARY_PATH="c:\Users\karol\libs\XMC_Peripheral_Library_v2.1.24\CMSIS"
 
-<<<<<<< HEAD
 #compilation stage
 # -c : compilation before linking
 # -S : preprocessing, compilation, before assembly
 # -E : preprocessing, before compilation
 COMPILATION_STAGE_OPTION=-c
-=======
-
->>>>>>> 01544c44c2faf6075a3b62e143cb8e82188d5892
 LIBRARY_FILES=
+
+
 
 # Compilation rules
 
